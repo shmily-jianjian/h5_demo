@@ -1,0 +1,33 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+.btn {
+   height: 40px;
+   width: 200px;
+   background-color: red;
+}
+
+.fade-enter {
+   opacity: 0;
+   transform: translate(0, 25px);
+   z-index: 1;
+}
+.fade-enter.fade-enter-active {
+   opacity: 1;
+   transform: translate(0, 0);
+ 
+   transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.fade-exit {
+   opacity: 1;
+   transform: translate(0, 0);
+}
+.fade-exit.fade-exit-active {
+   opacity: 0;
+   transform: translate(0, 30px);
+ 
+   transition: opacity 250ms ease-out, transform 300ms ease;
+}
+ 

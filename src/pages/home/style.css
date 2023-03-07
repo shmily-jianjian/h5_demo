@@ -1,0 +1,12 @@
+.home {
+  background-color: red;
+  opacity: 1;
+}
+:root:root {
+  --adm-color-primary: #a062d4;
+}
+
+body {
+  opacity: 1;
+  color: #446464;
+}
