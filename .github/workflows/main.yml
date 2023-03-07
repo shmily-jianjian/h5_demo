@@ -1,0 +1,42 @@
+name: CLI
+on:
+  push:
+    branches: ['main']
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1 下载代码
+      - uses: actions/checkout@v3
+      # 2 安装pnpm
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+        # Version of pnpm to install
+        version: '7.9.0'
+
+        # 安装依赖
+      - name: Install Deps
+        run: pnpm install
+
+        # 打包
+      - name: Build Website
+        run: pnpm build
+
+        # ssh
+      - name: ssh deploy
+        uses: easingthemes/ssh-deploy@v4.1.8
+        with:
+          # 登陆ssh时候的 sshkey
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          # Remote host
+          REMOTE_HOST: ${{ secrets.HOST }}
+          # Remote user
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          # Remote port
+          REMOTE_PORT: # optional, default is 22
+          SOURCE: ./dist
+          TARGET: /home/test
