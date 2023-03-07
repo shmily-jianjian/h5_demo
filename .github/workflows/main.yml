@@ -15,8 +15,8 @@ jobs:
       # 2 安装pnpm
       - uses: pnpm/action-setup@v2.2.4
         with:
-        # Version of pnpm to install
-        version: '7.9.0'
+          # Version of pnpm to install
+          version: '7.9.0'
 
         # 安装依赖
       - name: Install Deps
