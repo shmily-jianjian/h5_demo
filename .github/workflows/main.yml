@@ -26,9 +26,6 @@ jobs:
       - name: Build Website
         run: pnpm build
 
-      - name: 打印变量
-        run: echo hello world ${{ secrets.PRIVATE_KEY }} ${{ secrets.HOST }} ${{ secrets.USERNAME }}
-
       # ssh
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v4.1.8
