@@ -18,18 +18,18 @@ jobs:
           # Version of pnpm to install
           version: '7.9.0'
 
-        # 安装依赖
+      # 安装依赖
       - name: Install Deps
         run: pnpm install
 
-        # 打包
+      # 打包
       - name: Build Website
         run: pnpm build
 
       - name: 打印变量
         run: echo hello world ${{ secrets.PRIVATE_KEY }} ${{ secrets.HOST }} ${{ secrets.USERNAME }}
 
-        # ssh
+      # ssh
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v4.1.8
         with:
