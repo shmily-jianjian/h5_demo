@@ -33,8 +33,9 @@ jobs:
           # 登陆ssh时候的 sshkey
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           # Remote host
-          REMOTE_HOST: 8.134.143.181
+          REMOTE_HOST: ${{ secrets.HOST }}
           # Remote user
-          REMOTE_USER: root
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          # Remote port
           SOURCE: ./dist
           TARGET: /usr/local/nginx/html/github_ci
