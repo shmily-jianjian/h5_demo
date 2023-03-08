@@ -39,4 +39,4 @@ jobs:
           # Remote port
           # REMOTE_PORT: # optional, default is 22
           SOURCE: ./dist
-          TARGET: /usr/local/nginx/html/h5_demo
+          TARGET: /usr/local/nginx/html/h5_demo/dist
